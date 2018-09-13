@@ -12,7 +12,7 @@ node {
   sh "echo Revision := ${git_commit} >> extracontent.txt"
   
   
-  stage ('Build Docker Image') {
+  stage ('Build Docker image') {
     sh "docker build -t techtest-ssbkang-nodejs:${git_commit} ."
   }
 
