@@ -13,10 +13,12 @@ node {
   
   
   stage ('Build Docker image') {
-    catchError {
-      sh "docker build -t techtest-ssbkang-nodejs:${git_commit} ."
+    steps {
+      catchError {
+        sh "docker build -t techtest-ssbkang-nodejs:${git_commit} ."
+      }
+      echo currentBuild.result
     }
-    echo currentBuild.result
   }
 
   stage ('Delete the existing Docker Container') {
