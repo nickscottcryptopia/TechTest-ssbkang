@@ -7,7 +7,7 @@ node {
   echo "Revision: ${git_commit}"
 
   stage ('Build Docker Image') {
-    sh "docker build -t techtest-ssbkang-nodejs:${git_commit}"
+    sh "docker build -t techtest-ssbkang-nodejs:${git_commit} ."
   }
 
   stage ('Delete the existing Docker Container') {
