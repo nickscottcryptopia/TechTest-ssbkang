@@ -9,9 +9,6 @@ node {
   echo "Jenkins Build: ${jenkins_build}"
 
   echo "Update extracontent.txt file"
-  sh "echo Branch := ${git_branch} >> extracontent.txt"
-  sh "echo Revision := ${git_commit} >> extracontent.txt"
-  sh "echo Jenkins Build := ${jenkins_build} >> extracontent.txt"
 
   stage ('Build Docker Image') {
     sh "docker build -t techtest-ssbkang-nodejs:${git_commit} ."
