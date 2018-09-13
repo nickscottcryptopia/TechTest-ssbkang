@@ -13,11 +13,14 @@ node {
   
   
   stage ('Build Docker image') {
-    steps {
-      catchError {
-        sh "docker build -t techtest-ssbkang-nodejs:${git_commit} ."
-      }
-      echo currentBuild.result
+    script {
+        try {
+            sh "docker build -t techtest-ssbkang-nodejs:${git_commit} ."
+        } catch (err) {
+            echo err
+        }
+    }
+    echo currentBuild.result
     }
   }
 
