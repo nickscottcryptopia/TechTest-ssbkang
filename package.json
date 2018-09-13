@@ -1,0 +1,11 @@
+{
+    "name": "TechTest",  
+    "version": "0.2.0",   
+    "main": "sampletest.js",  
+    "scripts": {  
+      "start": "node src/sampletest.js"  
+    },  
+    "dependencies": {  
+      "express": "^4.13.3"  
+    }
+  }
