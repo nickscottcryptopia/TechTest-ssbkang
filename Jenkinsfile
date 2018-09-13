@@ -13,15 +13,7 @@ node {
   
   
   stage ('Build Docker image') {
-    script {
-        try {
-            sh "docker build -t techtest-ssbkang-nodejs:${git_commit} ."
-        } catch (err) {
-            echo err
-        }
-    }
-    echo currentBuild.result
-    }
+    sh "docker build -t techtest-ssbkang-nodejs:${git_commit} ."
   }
 
   stage ('Delete the existing Docker Container') {
