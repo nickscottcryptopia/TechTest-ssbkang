@@ -14,7 +14,7 @@ node {
     sh "docker rm -f techtest-ssbkang-nodejs-application"
   }
   
-  stage ('Redeploy the newer image version') {
+  stage ('Redeploy the Docker Container with the newer image version') {
     sh "docker run -d -p 80:3000 --name techtest-ssbkang-nodejs-application techtest-ssbkang-nodejs:${git_commit}"
   }
 }
